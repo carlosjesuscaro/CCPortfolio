@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+body, html {
+  height: 100%;
+  font-family: 'Montserrat',sans-serif;
+
+  background-image: url("./assets/AdobeStock_317103153.jpeg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  scroll-behavior: smooth;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(203,68,74,1);
+}
+
+.display-1 {
+  font-size: 96px;
+  /*text-shadow: 1px 1px #F7C144;*/
+  font-weight: bold;
+}
+
+.back {
+  background-color: rgba(7,7,7,1);
+}
+
+.back-nav {
+  background-color: rgba(7,7,7,0.9);
+}
+
+.imagen {
+  height: 210px;
+}
