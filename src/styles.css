@@ -22,9 +22,14 @@ body, html {
 }
 
 .display-1 {
-  font-size: 96px;
+  /*font-size: 96px;*/
+  font-size: 12vw;
   /*text-shadow: 1px 1px #F7C144;*/
   font-weight: bold;
+}
+
+.display-2 {
+  font-size: 8vw;
 }
 
 .back {
@@ -38,3 +43,6 @@ body, html {
 .imagen {
   height: 210px;
 }
+
+/*======================================*/
+
