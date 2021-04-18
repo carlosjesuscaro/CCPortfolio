@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
+
 body, html {
   height: 100%;
   font-family: 'Montserrat',sans-serif;
@@ -23,13 +24,14 @@ body, html {
 
 .display-1 {
   /*font-size: 96px;*/
-  font-size: 12vw;
+  font-size: 96px;
   /*text-shadow: 1px 1px #F7C144;*/
   font-weight: bold;
 }
 
 .display-2 {
-  font-size: 8vw;
+  font-size: 72px;
+  /*font-size: 72px;*/
 }
 
 .back {
@@ -45,4 +47,14 @@ body, html {
 }
 
 /*======================================*/
+@media (max-width: 576px) {
+  .display-1 {
+    font-size: 60px;
+    padding-top: 25px;
+  }
+
+  .display-2 {
+    font-size: 40px;
+  }
+}
 
