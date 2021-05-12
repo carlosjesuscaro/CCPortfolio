@@ -135,6 +135,14 @@
                   </ul>
                 </li>
               <li class="text-white">Noise variance is constant (homoscedasticity)</li>
+                <li style="list-style-type: none;">
+                  <ul>
+                    <li class="text-white">From this plotting the Scale location</li>
+                    <img src="assets/Rplot05.png" class="mt-3 img-thumbnail mb-5 text-center">
+                    <li class="text-white">Since it isn’t a straight line, we better double check with Breusch-Pagan
+                      test whose result is p-value:0.4483. Thus, we fail to reject H0, then we have homoscedasticity </li>
+                  </ul>
+                </li>
             </ul>
           </li>
           <li class="text-white">After this validation, we can conclude that our model is (with a confidence
@@ -148,7 +156,47 @@
           <li class="text-white">Validating the model with predictions:</li>
           <img src="assets/Rplot06.png" class="mt-3 img-thumbnail mb-5 text-center">
         </ul>
+      </div>
+    </div>
 
+    <div class="row justify-content-center mb-4">
+      <div class="col text-left d-block px-4">
+        <h2 class="text-secondary">Conclusions</h2>
+      </div>
+      <div class="col col-lg-10 col-md-10 col-sm-10">
+        <ul>
+          <li class="text-white">Business:</li>
+            <li style="list-style-type: none;">
+              <ul>
+                <li class="text-white">Contrary to what perhaps is expected in many startups, R&D Budget is
+                  the most important budget to increase the company’s profits</li>
+                <li class="text-white">There is not apparent relevance based on the startup state</li>
+              </ul>
+            </li>
+          <li class="text-white">Data Science:</li>
+            <li style="list-style-type: none;">
+              <ul>
+                <li class="text-white">Modelling a problem without validating the noise assumptions reduces
+                  significantly the interpretation from the results since the coefficients could not be used</li>
+                <li class="text-white">This is a small dataset and the analysis so far has been done in the complete
+                  dataset which does not test the model against “unseen” data. An alternative is to use the “caret”
+                  package from R which will allow to split the data several times (25 by default with caret) by using
+                  the bootstrap method and applying it to a new subset of the data.</li>
+                <li class="text-white">The R squared results are not so different:</li>
+                  <li style="list-style-type: none;">
+                    <ul>
+                      <li class="text-white">Full data: 0.9554</li>
+                      <li class="text-white">Caret approach: 0.9421</li>
+                    </ul>
+                  </li>
+                <li style="list-style-type: none;" class="text-white">It makes total sense to have a lower result
+                  with Caret as it actually tests the models with “unseen” data and then averages all the R
+                  squared results</li>
+                <li class="text-white">Considering the limited samples, the model parameters may change based on new
+                  data but the conclusions remain in regards to the most dominant feature to predict the final outcome</li>
+              </ul>
+            </li>
+        </ul>
       </div>
     </div>
 
