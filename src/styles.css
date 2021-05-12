@@ -47,6 +47,10 @@ body, html {
   height: 210px;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 /*======================================*/
 @media (max-width: 576px) {
   .display-1 {
