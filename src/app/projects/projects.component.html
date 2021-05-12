@@ -90,7 +90,64 @@
         </ul>
 
         <p class="text-white fs-4 text-justify">After checking for NAs in the data, here is a first analysis:</p>
+        <img src="assets/basic_stats.png" class="img-thumbnail mb-5">
 
+        <p class="text-white fs-4 text-justify">From this table is possible to see that in all regions, the R&D
+          budget is the smallest and that the Marketing budget is the biggest investment. However, this  doesn’t
+          answer our main question: what budget does it have the most significant impact on profits?<br><br>
+          Just in regards to profits per state, we can see the following: </p>
+
+        <img src="assets/Rplot.png" class="img-thumbnail mb-5 text-center">
+
+        <p class="text-white fs-4 text-justify">Where it is obvious that Florida has the highest median, all states
+          are relatively close to each other. <br><br>How does the relationship between each budget and the profits?</p>
+
+        <img src="assets/Rplot01.png" class="img-thumbnail mb-5 text-center">
+
+        <p class="text-white fs-4 text-justify">Here is clearer that the Marketing budget is the largest but it does
+          not necessarily reflect on better results. In fact, we could even say that at some point additional Marketing
+          budget does not change the Profits. <br><br>This is an interesting finding so let’s dig into it:</p>
+
+        <img src="assets/Rplot02.png" class="img-thumbnail mb-5 text-center">
+
+        <p class="text-white fs-4 text-justify"><p class="text-white fs-4 text-justify">Now it becomes clear that the
+        strongest correlation is between R&D spend and Profits (Marketing does also have an impact but not as
+        strong as R&D).<br><br>Would it be possible to quantify this? Yes, we can model these relationships through
+        a multi-linear model. <br><br>Our model output is:</p>
+
+        <img src="assets/model_output.png" class="img-thumbnail mb-5 text-center">
+
+        <p class="text-white fs-4 text-justify">How to interpret these results:</p>
+        <ul>
+          <li class="text-white">The R^2 output shows that 95% of our data fits our model (very high!)</li>
+          <li class="text-white">In order to consider the other values, we need to verify:</li>
+          <li style="list-style-type: none;">
+            <ul>
+              <li class="text-white">Noise is Gaussian with expectation zero</li>
+                <li style="list-style-type: none;">
+                  <ul>
+                    <li class="text-white">Histogram:</li>
+                    <img src="assets/Rplot03.png" class="mt-3 img-thumbnail mb-5 text-center">
+                    <li class="text-white">Shapiro Test: p-value = 0.1166. Thus, it is Gaussian</li>
+                    <li class="text-white">From the plotting the residuals, it is clear that the noise
+                    does not follow a pattern</li>
+                    <img src="assets/Rplot04.png" class="mt-3 img-thumbnail mb-5 text-center">
+                  </ul>
+                </li>
+              <li class="text-white">Noise variance is constant (homoscedasticity)</li>
+            </ul>
+          </li>
+          <li class="text-white">After this validation, we can conclude that our model is (with a confidence
+            interval of 95%):</li>
+          <li style="list-style-type: none;">
+            <ul>
+              <li class="text-white">Profit = 50,740 + 0.8018 * R&D Budget </li>
+              <li class="text-white">The Marketing budget has very little effect of factor of 0.02676</li>
+            </ul>
+          </li>
+          <li class="text-white">Validating the model with predictions:</li>
+          <img src="assets/Rplot06.png" class="mt-3 img-thumbnail mb-5 text-center">
+        </ul>
 
       </div>
     </div>
